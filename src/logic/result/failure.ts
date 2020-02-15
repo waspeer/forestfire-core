@@ -4,10 +4,10 @@ import { DomainErrorObject } from './domain-error';
 /**
  * Represents a failed result.
  */
-export class Failure<T extends DomainErrorObject<any>, A = any> {
+export class Failure<T extends DomainErrorObject<any>, S = any> {
   readonly error: T;
 
-  get value(): A {
+  get value(): S {
     // The structure of the Failure class should be the same as that
     // of the Success class so Typescript doesn't complain when trying
     // to retrieve the value of a result you know is successful.
@@ -27,7 +27,7 @@ export class Failure<T extends DomainErrorObject<any>, A = any> {
   /**
    * Type guard for the Failure class
    */
-  isFailure(): this is Failure<T, A> {
+  isFailure(): this is Failure<T, S> {
     return true;
   }
 

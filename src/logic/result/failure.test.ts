@@ -4,18 +4,18 @@ import { Failure } from './failure';
 
 const errorType = 'TEST_ERROR' as const;
 type TestError = DomainErrorObject<typeof errorType>;
-const testError = DomainError.create(errorType, 'everything is wrong');
+const testError = DomainError.create(errorType, 'everything is wrong')();
 
 describe('Failure', () => {
   let failure: Failure<TestError>;
 
   beforeAll(() => {
-    const error = testError();
-    failure = new Failure(error);
+    failure = new Failure(testError);
   });
 
   it('should construct', () => {
     expect(failure.constructor).toBe(Failure);
+    expect(failure.error).toBe(testError);
   });
 
   it('should communicate identity', () => {
