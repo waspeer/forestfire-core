@@ -1,6 +1,6 @@
 import * as DomainError from './domain-error';
-import { DomainErrorObject } from './domain-error';
 import { Failure } from './failure';
+import { DomainErrorObject } from './types';
 
 const errorType = 'TEST_ERROR' as const;
 type TestError = DomainErrorObject<typeof errorType>;

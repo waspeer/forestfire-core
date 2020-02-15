@@ -1,19 +1,33 @@
-import { DomainErrorObject } from './domain-error';
+import { DomainErrorObject, Either } from './types';
 import { Failure } from './failure';
 import { Success } from './success';
 
-export type Either<T extends DomainErrorObject<any>, S> = Failure<T, S> | Success<T, S>;
-
+/**
+ * Creates a Failure class
+ *
+ * @param {DomainErrorObject} error - The DomainErroObject
+ */
 export function fail<T extends DomainErrorObject<any>, S = any>(error: T): Either<T, S> {
   return new Failure<T, S>(error);
 }
 
+/**
+ * Creates a Success class
+ *
+ * @param {any} value - The value of the result
+ */
 export function ok<T, S extends DomainErrorObject<any> = DomainErrorObject<any>>(
   value?: T,
 ): Either<S, T> {
   return new Success<S, T>(value);
 }
 
+/**
+ * When given an array of results it will either return the first error
+ * it finds or return a Success result
+ *
+ * @param {Array.<Success|Failure>} results
+ */
 export function combine<T extends DomainErrorObject<any>>(
   results: Either<T, any>[],
 ): Either<T, any> {

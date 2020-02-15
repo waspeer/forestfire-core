@@ -1,13 +1,4 @@
-/**
- * Type of errors occurring in the domain.
- *
- * @template T - The string type of the error.
- */
-export interface DomainErrorObject<T extends string> {
-  type: T;
-  message: string;
-  error?: any;
-}
+import { DomainErrorObject } from './types';
 
 /**
  * Type of messageCreator that can be provided to the create function

@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-import { DomainErrorObject } from './domain-error';
+import { DomainErrorObject } from './types';
 
 /**
  * Represents a successful result
