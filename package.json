@@ -14,8 +14,12 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.2",
+    "@types/uuid": "^3.4.7",
     "jest": "^25.1.0",
     "poetic": "^1.4.0",
     "ts-jest": "^25.2.0"
+  },
+  "dependencies": {
+    "uuid": "^3.4.0"
   }
 }
