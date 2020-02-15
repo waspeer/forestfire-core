@@ -29,7 +29,7 @@ export type Either<T extends DomainErrorObject<any>, S> = Failure<T, S> | Succes
 export type ErrorOr<T> = Either<DomainErrorObject<any>, T>;
 
 /**
- * Represents a return value that is either a typed or untyped DomainError or
+ * Represents a return value that is either a DomainError or
  * a successful result.
  *
  * @template T - The possible errorTypes.
