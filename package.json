@@ -12,6 +12,9 @@
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "devDependencies": {
-    "poetic": "^1.4.0"
+    "@types/jest": "^25.1.2",
+    "jest": "^25.1.0",
+    "poetic": "^1.4.0",
+    "ts-jest": "^25.2.0"
   }
 }
