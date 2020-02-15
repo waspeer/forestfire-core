@@ -56,4 +56,20 @@ describe('Result', () => {
       expect(result.constructor).toBe(Success);
     });
   });
+
+  describe('.isResult', () => {
+    it('should return true when provided with a result', () => {
+      const success = Result.ok();
+      const failure = Result.fail(testError);
+
+      expect(Result.isResult(success)).toBe(true);
+      expect(Result.isResult(failure)).toBe(true);
+    });
+
+    it('should return false when not provided with a result', () => {
+      const random = 'RaAaaAndom!!';
+
+      expect(Result.isResult(random)).toBe(false);
+    });
+  });
 });

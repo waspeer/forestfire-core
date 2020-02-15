@@ -38,3 +38,12 @@ export function combine<T extends DomainErrorObject<any>>(
     return result;
   }, ok());
 }
+
+/**
+ * Tests if an object is a result
+ *
+ * @param object - The object to be tested
+ */
+export function isResult(object: any): boolean {
+  return object.constructor === Success || object.constructor === Failure;
+}
