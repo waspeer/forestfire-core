@@ -13,7 +13,7 @@ describe('Result', () => {
     it('should create a Failure instance', () => {
       const result = Result.fail(testError);
 
-      expect(result.constructor).toBe(Failure);
+      expect(result).toBeInstanceOf(Failure);
       expect(result.isFailure() && result.error).toBe(testError);
     });
   });
@@ -22,14 +22,14 @@ describe('Result', () => {
     it('should create a Success instance without a value', () => {
       const result = Result.ok();
 
-      expect(result.constructor).toBe(Success);
+      expect(result).toBeInstanceOf(Success);
     });
 
     it('should create a Success instance with a value', () => {
       const value = 'time is an illusion';
       const result = Result.ok(value);
 
-      expect(result.constructor).toBe(Success);
+      expect(result).toBeInstanceOf(Success);
       expect(result.isSuccess() && result.value).toBe(value);
     });
   });
@@ -42,7 +42,7 @@ describe('Result', () => {
 
       const result = Result.combine(results);
 
-      expect(result.constructor).toBe(Failure);
+      expect(result).toBeInstanceOf(Failure);
       expect(result.isFailure() && result.error).toBe(testError);
     });
 
@@ -53,7 +53,7 @@ describe('Result', () => {
 
       const result = Result.combine(results);
 
-      expect(result.constructor).toBe(Success);
+      expect(result).toBeInstanceOf(Success);
     });
   });
 

@@ -14,7 +14,7 @@ describe('Failure', () => {
   });
 
   it('should construct', () => {
-    expect(failure.constructor).toBe(Failure);
+    expect(failure).toBeInstanceOf(Failure);
     expect(failure.error).toBe(testError);
   });
 

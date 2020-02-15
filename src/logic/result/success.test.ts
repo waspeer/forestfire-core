@@ -9,7 +9,7 @@ describe('Success', () => {
   });
 
   it('should construct', () => {
-    expect(success.constructor).toBe(Success);
+    expect(success).toBeInstanceOf(Success);
     expect(success.value).toBe(value);
   });
 
