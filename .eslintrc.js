@@ -7,5 +7,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-console': 'off',
     quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
+    'react/static-property-placement': 'off',
   },
 };
